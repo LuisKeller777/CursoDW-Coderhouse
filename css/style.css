@@ -42,6 +42,7 @@ header {
     height: 70px;
     z-index: 1;
     background-color: #636363;
+    grid-area: header;
 }
 
 .header-name {
@@ -85,6 +86,7 @@ a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    grid-area: hero;
 }
 
 #hero-image-blog {
@@ -192,4 +194,46 @@ footer {
     text-align: center;
     padding: 5px 0px;
     font-size: 14px;
+    grid-area: footer;
+}
+
+#grid-padre {
+    /* probar propiedades */
+    
+    justify-content: stretch; /* start; | end | center | stretch | space-around | space-between | space-evenly */
+    align-content: stretch; /* start; | end | center | stretch | space-around | space-between | space-evenly */
+    
+    /* ---- */
+    display: grid;
+    grid-template-areas: 
+    "header header header header header"
+    "hero hero hero hero hero"
+    "content content content content content"
+    "none none none none none"
+    "footer footer footer footer footer"
+    ;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 70px 2fr 2fr 50px 50px;
+}
+
+#content{
+    grid-area: content;
+}
+
+.content-item{
+    text-align: center;
+}
+
+.content-item-descripcion{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#carrousel-clientes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 }
